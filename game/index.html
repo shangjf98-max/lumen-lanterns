@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumen Lanterns</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <header id="hud">
+    <div class="hud-left">
+      <span id="hud-level" class="hud-chip">Level 1 / 6</span>
+      <span id="hud-level-name" class="hud-name">First Light</span>
+    </div>
+    <div class="hud-centre">
+      <span id="hud-lanterns" class="hud-chip">Lanterns 0 / 1</span>
+      <span id="hud-rotations" class="hud-chip">Rotations 3</span>
+      <span id="hud-score" class="hud-chip">Score 0</span>
+    </div>
+    <div class="hud-right">
+      <button id="btn-undo" type="button">Undo</button>
+      <button id="btn-restart" type="button">Restart</button>
+      <button id="btn-sound" type="button">Sound: on</button>
+    </div>
+  </header>
+  <p id="hud-hint">Click the mirror to turn it.</p>
+  <div id="board-holder">
+    <canvas id="board" width="640" height="520" aria-label="Lumen Lanterns puzzle board"></canvas>
+    <section id="overlay-start" class="overlay visible">
+      <h1>Lumen Lanterns</h1>
+      <p class="tagline">Bend the light. Wake every lantern.</p>
+      <p class="rules">Click a mirror to rotate it and steer the beam. Light all the lanterns before your rotations run out. Prisms split the beam; coloured glass tints it.</p>
+      <div class="overlay-buttons">
+        <button id="btn-play" type="button" class="primary">Play</button>
+        <button id="btn-how" type="button">How to play</button>
+      </div>
+      <p class="controls-note">Mouse: click a mirror &middot; Keyboard: arrows + Space, U undo, R restart, M mute</p>
+    </section>
+    <section id="overlay-how" class="overlay">
+      <h2>How to play</h2>
+      <ul class="how-list">
+        <li><b>Goal:</b> light every lantern on the board.</li>
+        <li><b>Mirrors:</b> click to rotate. Each rotation costs one move.</li>
+        <li><b>Prisms:</b> split the beam into two beams at right angles.</li>
+        <li><b>Coloured glass:</b> tints the beam. Coloured lanterns need the matching tint.</li>
+        <li><b>Stars:</b> finish at or under par for 3 stars. 6 levels in all.</li>
+      </ul>
+      <div class="overlay-buttons">
+        <button id="btn-how-back" type="button" class="primary">Back</button>
+      </div>
+    </section>
+    <section id="overlay-clear" class="overlay">
+      <h2 id="clear-title">Level complete!</h2>
+      <p id="clear-stars" class="stars">★★★</p>
+      <p id="clear-score">Level score +0</p>
+      <div class="overlay-buttons">
+        <button id="btn-next" type="button" class="primary">Next level</button>
+      </div>
+    </section>
+    <section id="overlay-over" class="overlay">
+      <h2>Out of rotations</h2>
+      <p id="over-detail">The light faded before every lantern woke.</p>
+      <div class="overlay-buttons">
+        <button id="btn-retry" type="button" class="primary">Try again</button>
+        <button id="btn-over-undo" type="button">Undo last move</button>
+      </div>
+    </section>
+    <section id="overlay-victory" class="overlay">
+      <h2>Every lantern shines!</h2>
+      <p>You finished all 6 levels of Lumen Lanterns.</p>
+      <p id="victory-score">Final score: 0</p>
+      <div class="overlay-buttons">
+        <button id="btn-again" type="button" class="primary">Play again</button>
+      </div>
+    </section>
+  </div>
+  <footer id="footer-note">An original mirror-beam puzzle. No network, no tracking, no ads.</footer>
+</main>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

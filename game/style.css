@@ -1,0 +1,199 @@
+:root {
+  --page: #0b1026;
+  --panel: #141b3d;
+  --panel-edge: #2b3768;
+  --text: #eef1ff;
+  --text-dim: #aab3d6;
+  --accent: #ffd94d;
+  --danger: #ff6b81;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(900px 500px at 50% -80px, #1b2456 0%, var(--page) 60%);
+  color: var(--text);
+  font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: min(980px, 100%);
+  padding: 14px 18px 10px;
+}
+
+#hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 14px;
+  padding: 10px 14px;
+}
+
+.hud-left, .hud-centre, .hud-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hud-chip {
+  background: #0d1330;
+  border: 1px solid var(--panel-edge);
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hud-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+button {
+  appearance: none;
+  border: 1px solid var(--panel-edge);
+  background: #1d2760;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 7px 13px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) { background: #26337c; }
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #241a00;
+  padding: 10px 26px;
+  font-size: 16px;
+}
+
+button.primary:hover { background: #ffe47a; }
+
+#hud-hint {
+  margin: 10px 4px;
+  color: var(--text-dim);
+  font-size: 14px;
+  min-height: 18px;
+}
+
+#board-holder {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 520px;
+  background: rgba(9, 13, 34, 0.55);
+  border: 1px solid var(--panel-edge);
+  border-radius: 16px;
+  padding: 8px;
+}
+
+#board {
+  display: block;
+  border-radius: 10px;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  inset: 8px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 24px;
+  background: rgba(8, 11, 30, 0.82);
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+}
+
+.overlay.visible { display: flex; }
+
+.overlay h1 {
+  margin: 0;
+  font-size: 52px;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  text-shadow: 0 0 28px rgba(255, 217, 77, 0.45);
+}
+
+.overlay h2 {
+  margin: 0;
+  font-size: 34px;
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 19px;
+  color: var(--text);
+}
+
+.rules {
+  margin: 0;
+  max-width: 560px;
+  line-height: 1.55;
+  color: var(--text-dim);
+  font-size: 15px;
+}
+
+.overlay-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.controls-note {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.how-list {
+  text-align: left;
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 22px;
+  max-width: 520px;
+  color: var(--text-dim);
+  font-size: 15px;
+}
+
+.how-list b { color: var(--text); }
+
+.stars {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: 6px;
+  color: var(--accent);
+}
+
+#footer-note {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+}
